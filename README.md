@@ -1,1 +1,1 @@
-# Seminare data catalog
+# Seminar data catalog
