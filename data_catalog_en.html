@@ -5,11 +5,16 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <title>Spark and Sedona at CASD</title>
+    <title>Metadata management at CASD</title>
 
     <link rel="stylesheet" href="dist/reset.css"/>
     <link rel="stylesheet" href="dist/reveal.css"/>
     <link rel="stylesheet" href="dist/theme/dracula.css"/>
+    <style>
+        .left-align {
+            text-align: left;
+        }
+    </style>
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css"/>
@@ -30,7 +35,7 @@
                   filter: invert(1);
                 " class="demo-logo"/>
 
-                <h3>Spark and Sedona at CASD</h3>
+                <h3>Metadata management at CASD</h3>
                 <p>
                     <small>Datascience team</small>
                 </p>
@@ -39,228 +44,156 @@
             <section data-transition="fade-in slide-out">
                 <h3>Goals</h3>
                 <ul>
-                    <li>What is apache spark?</li>
-                    <li>Data processing with spark.</li>
-                    <li>What is apache sedona?</li>
-                    <li>Spatial data processing with sedona.</li>
+                    <li>What is data governance?</li>
+                    <li>What is metadata management?</li>
+                    <li>What are the popular metadata management tools?</li>
+                    <li>How to do metadata management at CASD?</li>
                 </ul>
             </section>
         </section>
 
-        <!--Slide 2: Why use python?-->
-        <section data-transition="fade-in slide-out" class="left-align">
-            <section data-align="left">
-                <h3>Why use Apache Spark?</h3>
+        <!--Slide 2: What is data governance?-->
+        <section data-transition="fade-in slide-out">
+            <section>
+                <h3>What is data governance?</h3>
 
                 <p>
-                    <em>Apache Spark</em> is a <span style="font-weight: bold;">distributed computing framework</span>
-                    designed for processing and
-                    analyzing large-scale data efficiently. Spark is an <span style="font-weight: bold;">open-source project under the Apache Software
-                    Foundation</span>.
+                    <em>Data governance</em> is a collection of <span style="font-weight: bold;">processes, roles, policies,
+                    standards, and metrics</span> that ensure the data
+                    <span style="font-weight: bold;">availability, usability, interoperability, security (i.e. confidentiality, integrity, privacy). </span>.
                 </p>
 
                 <p>
-                    <em>Apache Spark</em> is designed to replace the older distributed computing framework <span
-                        style="font-weight: bold;">Hadoop</span>.
-                    By default, spark performs data computation in memory, not on disk.
+                    It makes the use of data <span style="font-weight: bold;">consistent, trustworthy, effective and efficient</span>.
                 </p>
-                <small>Spark is now one of the most widely used big data processing engines.</small>
 
 
             </section>
             <section>
-                <h3>Spark Key Advantages:</h3>
+                <h3>Data governance key concepts:</h3>
+                <img src="assets/introduction_of_data_governance_terms.jpg"
+                     alt="introduction_of_data_governance_terms.jpg" style="width:50%; height:auto;"/>
 
                 <ul>
-                    <li class="fragment"><em>Speed</em>: 100 times faster than Hadoop MapReduce</li>
-                    <li class="fragment"><em>Versatility</em>: Batch data processing, Machine learning, Graph analytics
-                    </li>
-                    <li class="fragment"><em>Scalability</em>: Single machine, on-premise clusters, public cloud</li>
-                    <li class="fragment"><em>Interoperability</em>: Python, Java, Scala, R and SQL</li>
-                    <li class="fragment"><em>Vast and mature ecosystem</em></li>
+                    <small>
+                        <li class="fragment"><em>People</em>: who have the right to <span style="font-weight: bold;">make the decisions and accountable</span>
+                            for
+                            them.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Policies</em>: what <span
+                                style="font-weight: bold;">decisions/rules</span> must be made to ensure effective
+                            management and use of data.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Metrics</em>: how to <span
+                                style="font-weight: bold;">measure/evaluate</span> if <span style="font-weight: bold;">decisions/rules</span>
+                            are respected.
+                        </li>
+                    </small>
                 </ul>
 
                 <aside class="notes">
-
+                    For example, if someone asks to access data, who can decide whether we grant access to the user or
+                    not.
+                    For example, before publishing data, the data must pass the `quality control` and `privacy control`,
+                    etc.
+                    For example, to control the `data quality`, we need to define the `metrics for data accuracy,
+                    completeness, etc`.
                 </aside>
             </section>
-            <section id="disadvantages">
-                <h3>Some disadvantages</h3>
-                <ul>
-                    <li class="fragment"><em>Requires significant hardware resources</em>: CPU, RAM and network(for
-                        cluster mode).
-                    </li>
-                    <li class="fragment"><em>Requires complex configuration</em>: vast expertise to set up spark cluster
-                        correctly.
-                    </li>
-                    <li class="fragment"><em>Deep learning curve</em>: RDDs, DataFrames, DAG scheduling, partitioning.
-                    </li>
-                    <li class="fragment"><em>Overhead for Small Jobs</em>: Spark session setup and task scheduling
-                        introduce overhead.
-                    </li>
-
-                </ul>
-            </section>
 
         </section>
 
-        <!--Slide 3: Key concepts in spark-->
+        <!--Slide 3: data management-->
         <section data-transition="fade-in slide-out">
-            <!--Slide 3-1: spark general architecture-->
-            <section>
-                <h3>Key Concepts in spark Application</h3>
-                <p>Spark Application contains a <span style="font-weight: bold;">driver program</span> and <span
-                        style="font-weight: bold;">data processing tasks</span> on a cluster.
+            <!--Slide 3-1: data governance vs data management -->
+            <section id="data governance vs data management">
+                <h3>Data governance vs Data management</h3>
+                <p class="left-align">
+                    <em>Data management</em> is an entire suite of <span style="font-weight: bold;">practices, processes, systems and tools</span>
+                    which implement the <em>data governance</em> definitions.
                 </p>
-                <img src="assets/apache-spark-architecture.png" alt="apache-spark-architecture.png"/>
-            </section>
-            <!--Slide 3-2: key concept in spark 1-->
-            <section>
-                <h3>Kep concepts in spark(1):</h3>
 
                 <ul>
 
-                    <li class="fragment"><em>Driver</em>: Coordinates with the cluster manager and worker, translate
-                        tasks into the execution plan, sends tasks to executors.
+                    <li class="fragment"><em>Data governance</em>: defines the policies and accountability(i.e. what
+                        must be done and why.)
                     </li>
 
-                    <li class="fragment"><em>Spark Session & Contexts</em>: Entry point of spark application, provides
-                        access
-                        to DataFrames, SQL queries, and configurations.
-                    </li>
-
-                    <li class="fragment"><em>Cluster manager</em>: Allocates CPU and RAM, determines which task runs
-                        where and when, monitors tasks and replaces failed ones.
-                    </li>
-
-                    <li class="fragment"><em>Executor</em>: Run tasks and store data partitions in memory/disk.
+                    <li class="fragment"><em>Data management</em>: enforces the policies(i.e. how it gets done in
+                        practice.)
                     </li>
 
                 </ul>
+
             </section>
-            <!--Slide 3-3: key concept in spark 2-->
+            <!--Slide 3-2: key concept in data management-->
             <section>
-                <h3>Kep concepts in spark(2):</h3>
+                <h3>Kep concepts in data management:</h3>
 
                 <ul>
 
-                    <li class="fragment"><em>RDD (Resilient Distributed Dataset)</em>: Core data model in spark.
-                        A <span style="font-weight: bold;">distributed fault tolerance</span> collection of immutable
-                        objects.
+                    <li class="fragment"><em>Data Principals</em>: defines data ownership, accountability, ethics,
+                        compliance, etc.
                     </li>
-                    <li class="fragment"><em>DataFrame</em>: An overlay of RDD, provides sql like operations and
-                        optimization(Catalyst, Tungsten)
+
+                    <li class="fragment"><em>Data Lifecycle</em>: describes the stages data goes through from creation
+                        to deletion in your
+                        organization.
                     </li>
-                    <li class="fragment"><em>Dataset</em>: Type-safe version of DataFrame, only available for Scala/Java
-                        API.
+
+                    <li class="fragment"><em>Data Quality</em>: measures how fit data is for its intended use
                     </li>
-                    <li class="fragment"><em>Partitioning</em>: Data(RDD, DataFrame, Dataset) is split into partitions
-                        distributed across executors.
+
+                    <li class="fragment"><em>Metadata Management</em>: facilitates the search and usage of data by
+                        providing context
+                    </li>
+
+                    <li class="fragment"><em>Data Security</em>: protects data against unauthorized access, corruption,
+                        or loss.
                     </li>
 
                 </ul>
-            </section>
-
-            <!--Slide 3-4: key concept in spark 3-->
-            <section>
-                <h3>Kep concepts in spark(3):</h3>
-
-                <ul>
-                    <li class="fragment"><em>Driver program</em>: Directed acyclic graph (DAG) of transformations and
-                        actions.
-                    </li>
-                    <li class="fragment"><em>Transformations</em>: map, filter, groupBy, etc.
-                    </li>
-                    <li class="fragment"><em>Actions</em>: trigger the execution of the transformations before.
-                    </li>
-                    <li class="fragment"><em>Lazy Evaluation</em>: Transformations are not executed immediately.
-                        Execution happens only when an action is called.
-                        Allows Spark to optimize the DAG as much as possible.
-                    </li>
-                </ul>
-            </section>
-
-            <!--Slide 3-5: key concept in spark(advance)-->
-            <section>
-                <h3>Kep concepts in spark(advance):</h3>
-
-                <small><p><em>Data shuffling</em> is the redistribution of data across executors. It's one of the most
-                    expensive operations, <em>minimizing shuffle is the key for performance.</em>
-                </p></small>
-                <img src="assets/spark_shuffle.png" alt="spark_shuffle.png"/>
-
             </section>
         </section>
 
 
-        <!--Slide 4: spark in CASD-->
+        <!--Slide 4: What is metadata management-->
         <section data-transition="fade-in slide-out">
-            <!-- Slide 4-1: overview      -->
+            <!-- Slide 4-1: What is metadata? -->
             <section>
-                <h2>Spark in CASD</h2>
+                <h3>What is metadata?</h3>
+                <p><em>ISO/IEC 11179</em>: metadata (information objects) are data about Data Elements, Value
+                    Domains, and other reusable
+                    semantic and representational information objects that describe the meaning and technical details of
+                    a data item.</p>
+
+                <p><em>My definition </em>: metadata is structured information that describes one or more aspects(e.g. format, size, purpose, etc.) of a data entity.
+In general, Metadata is used to summarize basic information about data which can make `finding, tracking, using,
+and managing` data easier. </p>
+
+            </section>
+            <!-- Slide 4-2: What is metadata management? -->
+            <section>
+                <h2>What is metadata management?</h2>
 
                 <ul>
-                    <li class="fragment"><em>Spark cluster mode</em>: local, and yarn with hdfs</li>
-                    <li class="fragment"><em>Spark client API</em>: Python, Java, Scala, R, SQL</li>
-                    <li class="fragment"><em>Integrated Development Environment (IDE)</em>: vs-code, r-studio, jupyter
-                        notebook
+                    <li class="fragment"><em>Collecting metadata</em>: gathering information(e.g. schemas, formats,
+                        provider, etc.) about data.
                     </li>
-                    <li class="fragment"><em>Project Structure & Configuration Files</em>: CASD best practices</li>
+                    <li class="fragment"><em>Lineage tracking</em>: understanding where data came from and how it
+                        changed.
+                    </li>
+                    <li class="fragment"><em>Term definitions</em>: Standardizing terms, so `sedona` means the same
+                        everywhere for everyone.
+                    </li>
+                    <li class="fragment"><em>Cataloging</em>: Building searchable inventories of data assets.</li>
                 </ul>
             </section>
-            <!-- Slide 4-2: Install spark in casd      -->
-            <section>
-                <h3>Install spark in CASD</h3>
-                <pre data-id="code-animation"><code class="language-Bash" data-trim
-                                                    data-line-numbers="|3-9|27-32|38-41|"><script
-                        type="text/template">
-# step1: Install the latest spark framework
-# goto the target folder
-cd C:\Users\Public\Desktop\Raccourcis\Spark
 
-# run the installation script
-.\InstallSpark.ps1
-
-# check the installed spark version
-spark-shell --version
-
-## it may take a few seconds to show the output, be patient
-# expected output
-Welcome to
-____              __
-/ __/__  ___ _____/ /__
-_\ \/ _ \/ _ `/ __/  '_/
-/___/ .__/\_,_/_/ /_/\_\   version 3.5.5
-/_/
-
-Using Scala version 2.12.18, OpenJDK 64-Bit Server VM, 11.0.2
-Branch HEAD
-Compiled by user ubuntu on 2024-08-06T11:36:15Z
-Revision bb7846dd487f259994fdc69e18e03382e3f64f42
-Url https://github.com/apache/spark
-Type --help for more information.
-
-# step2: Install the pyspark support
-# create a python virtual environment
-conda create --name spark-sedona python --offline
-
-# activate the python virtual environment
-conda activate spark-sedona
-
-# check python version
-python -V
-# check installed packages
-pip list
-# install pyspark
-pip install pyspark==3.5.5
-# show the installed package version
-pip show pyspark
-
-
-
-					</script></code></pre>
-
-            </section>
         </section>
 
 
@@ -277,7 +210,7 @@ pip show pyspark
 
                 <p>CASD provides <em>Apache Spark cluster for Sedona</em>.</p>
             </section>
-           <!--Slide 5-2: Sedona advantages-->
+            <!--Slide 5-2: Sedona advantages-->
             <section data-align="left">
                 <h3>Sedona Key Advantages:</h3>
 
@@ -298,7 +231,7 @@ pip show pyspark
                 </ul>
 
             </section>
-                <!--Slide 5-2: Sedona disadvantages-->
+            <!--Slide 5-2: Sedona disadvantages-->
             <section id="sedona-disadvantages">
                 <h3>Some disadvantages of Sedona</h3>
                 <ul>
@@ -347,7 +280,7 @@ pip show pyspark
                     </li>
                 </ul>
             </section>
-             <!--Slide 6-3: spatial rdd in sedona-->
+            <!--Slide 6-3: spatial rdd in sedona-->
             <section>
                 <h3>Spatial RDDs in Sedona(Spark):</h3>
                 <p>Sedona adds <em>spatial metadata, spatial indexing</em> on top of Spark’s standard RDD to build a
@@ -365,7 +298,7 @@ pip show pyspark
                     </li>
                 </ul>
             </section>
-             <!--Slide 6-3: spatial dataframe in sedona-->
+            <!--Slide 6-3: spatial dataframe in sedona-->
             <section>
                 <h3>Spatial Dataframe in Sedona(Spark):</h3>
                 <p>Sedona adds <em>geometry, raster</em> user define column type on top of Spark’s dataframe to build a
@@ -376,9 +309,11 @@ pip show pyspark
                     </li>
                     <li class="fragment"><em>raster</em>: stores pixel grids, CRS, etc.
                     </li>
-                    <li class="fragment"><em>geometry sql operators</em>: Thirty plus pre-defined functions for geometry columns
+                    <li class="fragment"><em>geometry sql operators</em>: Thirty plus pre-defined functions for geometry
+                        columns
                     </li>
-                    <li class="fragment"><em>raster sql operators</em>: Twenty plus pre-defined functions for geometry columns
+                    <li class="fragment"><em>raster sql operators</em>: Twenty plus pre-defined functions for geometry
+                        columns
                 </ul>
             </section>
         </section>

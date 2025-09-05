@@ -46,10 +46,11 @@ The Below figure shows a general representation of data governance and managemen
 ## 2. What is metadata management?
 
 Managing metadata involves:
-- **Cataloging**: Building searchable inventories of data assets.
+
+- **Collecting metadata**: gathering information(e.g. schemas, formats, transformations, provider, etc.) about data.
 - **Lineage tracking**: Understanding where data came from and how it changed.
 - **Term definitions**: Standardizing terms, so `sedona` means the same everywhere for everyone.
-- **Technical metadata**: Schemas, formats, data transformations.
+- **Cataloging**: Building searchable inventories of data assets.
 
 ### 2.1. What is metadata?
 
