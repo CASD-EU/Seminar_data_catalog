@@ -44,47 +44,94 @@ The Below figure shows a general representation of data governance and managemen
 ![introduction_of_data_governance_terms.jpg](assets/introduction_of_data_governance_terms.jpg)
 
 
-
-
 ## 2. What is metadata management?
 
-There are two main parts of metadata management:
- - Gathering and loading the metadata of essential data entities(e.g. file, table, data pipeline, etc.)
- - Use the metadata to search/discover, understand and trace data.
+Managing metadata involves:
+- **Cataloging**: Building searchable inventories of data assets.
+- **Lineage tracking**: Understanding where data came from and how it changed.
+- **Term definitions**: Standardizing terms, so `sedona` means the same everywhere for everyone.
+- **Technical metadata**: Schemas, formats, data transformations.
 
-In this seminar, we use **OpenMetadata** as the metadata management tool. Because it covers all
-the functionality that **Atlas** offers. For the functionalities which **Atlas** do not offer, I will
-notify you. 
+### 2.1. What is metadata?
 
-## 2.1 Use the metadata to search and discover data
+### ISO definition
+
+In **ISO/IEC 11179**, the `metadata (information objects) are data about Data Elements, Value Domains, and other reusable 
+semantic and representational information objects` that describe the `meaning and technical details` of a data item.
+
+### My definition 
+
+**Metadata** is `structured information` that describes one or more aspects of a data entity. 
+In general, Metadata is used to summarize basic information about data which can make `finding, tracking, using,
+and managing` data easier. 
+
+### 2.2 what are the objectives of the metadata?
+
+In general, metadata should answer the following questions:
+- What is the data asset about? 
+    - Descriptions (tables, columns)
+    - Keywords or tags
+    - Themes or categories
+- Why does the data asset exist?
+    - Data source
+    - Lineage
+    - Impact analysis
+- Where is the data asset from?
+    - Spatial coverage
+    - Language
+    - Business domains
+- Who is responsible for the data asset?
+    - Creator or owner
+    - Contributors or experts
+    - Point of contact
+- When was the data asset created and updated?
+    - Creation date
+    - Last updated or modified date
+    - Update frequency
+- How can the data asset be used?
+    - License
+    - Classification
+    - Use cases
 
 
-### 2.1.1 Discover data with keywords
+
+> In this seminar, we use **OpenMetadata** as the metadata management tool.
+> 
+
+## 2.4 Metadata management key stages
+
+There are stages of metadata management:
+ - Designing metadata model : Gathering requirements, and identifying which metadata need to be collected
+ - Creating metadata: Gathering the metadata of essential data entities(e.g. file, table, data pipeline, etc.)
+ - Storing metadata: Centralizing and standardizing metadata in a repository.
+ - Using metadata: Providing tools to search/discover, understand and trace data by using metadata.
+ - Auditing metadata: Check if the collected metadata fulfils the requirements or not?
+
+
+## 3. What are the popular metadata management tools?
+
+
+## 4. How to use Open-Metadata(OM) as a metadata management tool?
+### 4.1 Metadata ingestion
+#### 4.1.1 Load data entity
+#### 4.1.2 Load Classification
+#### 4.1.3 Load Glossary
+#### 4.1.4 Load data lineage
+
+### 4.2 Use metadata
+####  4.2.1 Discover data with keywords
 
 Suppose I am a newcomer, and all I know is that the data is about `hospital in french communes`. 
 
-## 2.2 Use the lineage metadata to trace data provenance 
+#### 4.2.2 Use the lineage metadata to trace data provenance 
 
-## 2.3 Collaboration (Atlas does not provide this functionality)
+#### 4.2.3 Collaboration 
 
 Announcements, tasks, Activity feed, and team conversations
 
-## 2.4 Gathering metadata
 
-## 2.5 Load metadata into OpenMetadata
-## 3. What is a data catalog?
 
-## 4. What are the popular data catalog implementations?
 
-## 5. How to use Open-Metadata(OM) as a data catalog?
 
-### 5.1 Load data entity
-
-### 5.2 Load Glossary
-### 5.3 Load Classification
-
-### 5.4 Load data lineage
-
-### 5.5 How to use the search engine
 
 
