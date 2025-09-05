@@ -3,9 +3,8 @@
 In this seminar, we will learn:
 - What is data governance?
 - What is metadata management? 
-- What is a data catalog? 
-- What are the popular data catalog implementations?
-- How to use Open-Metadata(OM) as a data catalog?
+- What are the popular metadata management tools?
+- How to use Open-Metadata(OM) as a metadata management tool?
 
 ## 1. What is data governance?
 
