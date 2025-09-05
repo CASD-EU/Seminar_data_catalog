@@ -68,10 +68,13 @@ and managing` data easier.
 ### 2.2 what are the objectives of the metadata?
 
 In general, metadata should answer the following questions:
-- What is the data asset about? 
-    - Descriptions (tables, columns)
-    - Keywords or tags
-    - Themes or categories
+- What is the data asset about? → Descriptive Metadata
+    - Purpose: Explains content and meaning. 
+    - Examples:
+         - Descriptions (tables, columns): Contains purchase history of retail customers
+         - Keywords or tags: sales, transaction, retail, invoice
+         - Themes or categories
+    - Use case: Helps users discover and understand data.
 - Why does the data asset exist?
     - Data source
     - Lineage
@@ -93,6 +96,76 @@ In general, metadata should answer the following questions:
     - Classification
     - Use cases
 
+
+
+
+2. Why does the data asset exist? → Purpose/Business Metadata
+
+Purpose: Explains business context, goals, and justification.
+
+Examples:
+
+“Collected to support regulatory reporting”
+
+“Created for customer segmentation in marketing campaigns”
+
+Use case: Ties data to organizational objectives and compliance.
+
+3. Where is the data asset from? → Lineage Metadata
+
+Purpose: Tracks origin and transformations.
+
+Examples:
+
+Source: “Extracted from ERP system X”
+
+Transformation: “Aggregated daily, filtered by active customers”
+
+Destination: “Loaded into Data Warehouse fact table”
+
+Use case: Enables traceability, impact analysis, and debugging.
+
+4. Who is responsible for the data asset? → Ownership & Stewardship Metadata
+
+Purpose: Assigns accountability.
+
+Examples:
+
+Data Owner: Finance Department
+
+Data Steward: Jane Doe, Data Quality Manager
+
+Use case: Clarifies responsibility for quality, compliance, and issue resolution.
+
+5. When was the data asset created and updated? → Temporal Metadata
+
+Purpose: Captures timestamps and version history.
+
+Examples:
+
+Creation date: 2023-07-15
+
+Last updated: 2025-09-01
+
+Version: v2.3
+
+Use case: Supports auditing, compliance, and time-sensitive decisions.
+
+6. How can the data asset be used? → Administrative & Technical Metadata
+
+Purpose: Defines usage constraints, format, and access methods.
+
+Examples:
+
+Format: Parquet, UTF-8
+
+Access method: API endpoint / SQL schema
+
+Security: “Contains personal data, GDPR applies”
+
+Retention policy: “Keep for 7 years”
+
+Use case: Guides safe, legal, and efficient data usage.
 
 
 > In this seminar, we use **OpenMetadata** as the metadata management tool.
