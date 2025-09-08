@@ -300,11 +300,19 @@
                 <p><em>Open Metadata</em> is an open-source, modern metadata management tool. It provides:</p>
                 <ul>
                     <li>Unified metadata storage</li>
-                   <li>Centralized data catalog with powerful search engine</li>
-                    <li>Collaboration features(e.g. comments, annotations, etc.) for better auditing</li>
+                    <li>Centralized data catalog with powerful search engine</li>
+                    <li>Collaboration features(e.g. tasks, team conversations, etc.) for better auditing</li>
                 </ul>
             </section>
-            <!--Slide 6-3: spatial rdd in sedona-->
+            <!--Slide 6-2: Openmetdata Architecture-->
+            <section>
+                <h3>Open metadata main components</h3>
+                <p><em>Open Metadata</em> platforms contains: web application, RDBMS, search engine, and workflow
+                    manager</p>
+                <img src="assets/om_architecture.png"
+                     alt="om_architecture.png" style="width:70%; height:auto;"/>
+            </section>
+            <!--Slide 6-3: Types of Metadata Managed by Open metadata-->
             <section>
                 <h3>Types of Metadata Managed by Open metadata</h3>
 
@@ -319,67 +327,57 @@
                     </li>
                     <li class="fragment"><em>Temporal Metadata</em>: When was the data asset created and updated?
                     </li>
+                    <li class="fragment"><em>Administrative & Technical Metadata</em>: How can the data asset be used?
+                    </li>
                 </ul>
             </section>
-            <!--Slide 6-3: spatial dataframe in sedona-->
+            <!--Slide 6-3: Open metadata key features-->
             <section>
-                <h3>Spatial Dataframe in Sedona(Spark):</h3>
-                <p>Sedona adds <em>geometry, raster</em> user define column type on top of Spark’s dataframe to build a
-                    Spatial Dataframe. For all spatial columns, it adds spatial SQL function supports(e.g. ST_Contains,
-                    ST_Transform, etc.)</p>
+                <h3>Open metadata key features</h3>
                 <ul>
-                    <li class="fragment"><em>geometry</em>: stores point, line, polygon, list of polygons
+                    <li class="fragment"><em>Metadata ingestion framework</em>: connectors, rest-API, python-SDK
                     </li>
-                    <li class="fragment"><em>raster</em>: stores pixel grids, CRS, etc.
+                    <li class="fragment"><em>Data discovery</em>: Data searchable by name(i.e. table, column),
+                        description, tags, owner, etc.
                     </li>
-                    <li class="fragment"><em>geometry sql operators</em>: Thirty plus pre-defined functions for geometry
-                        columns
+                    <li class="fragment"><em>Lineage Tracking</em>: End-to-end data flow visualization.
                     </li>
-                    <li class="fragment"><em>raster sql operators</em>: Twenty plus pre-defined functions for geometry
-                        columns
+                    <li class="fragment"><em>Collaboration</em>: Announcements, tasks, Activity feed, team conversations, etc.</li>
+                    <li class="fragment"><em>Governance</em>: Teams, roles, policies, etc.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Advantage of Open metadata</h3>
+                <ul>
+                    <li>Open-source ane extensible.</li>
+                    <li>Support all metadata types.</li>
+                    <li>Enhances collaboration across teams.</li>
+                    <li>Strong community support.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Disadvantage of Open metadata</h3>
+                <ul>
+                    <li>Deployment and setup are complex.</li>
+                    <li>Ingestion framework requires many development time</li>
+                    <li>May need customization for specific needs.</li>
                 </ul>
             </section>
         </section>
 
-        <!--Slide 7: sedona in CASD-->
+        <!--Slide 7: Open metadata in CASD-->
         <section data-transition="fade-in slide-out">
             <!-- Slide 7-1: overview      -->
             <section>
-                <h2>Sedona in CASD</h2>
-
+                <h2>Open metadata in practice</h2>
                 <ul>
-                    <li class="fragment"><em>Computing engine</em>: spark</li>
-                    <li class="fragment"><em>Spark client API</em>: Python, Java, Scala, SQL, R</li>
-                    <li class="fragment"><em>Integrated Development Environment (IDE)</em>: vs-code, r-studio, jupyter
-                        notebook
-                    </li>
-                    <li class="fragment"><em>Project Structure & Configuration Files</em>: CASD best practices</li>
+                    <li>Metadata ingestion</li>
+                    <li>Use metadata to discover data</li>
+                    <li>Use collaboration features to improve metadata(audit).</li>
                 </ul>
-            </section>
-            <!-- Slide 7-2: Install sedona in casd      -->
-            <section>
-                <h3>Install sedona in CASD</h3>
-                <pre data-id="code-animation"><code class="language-Bash" data-trim
-                                                    data-line-numbers="|11-14|"><script
-                        type="text/template">
-# step1: Install the latest sedona framework
-# CASD provides multiple versions of sedona. But by default, CASD only offers the jar files of the
-# `latest version of sedona`. If you want to use a specific version of sedona, you need to contact `service@casd.eu`
-cd C:\Users\Public\Documents\sedona\sedona-35-212-172
-
-# create a folder called jars in your project, and copy the folder `sedona-35-212-172` into jars
-cp -r .\sedona-35-212-172 path\to\your-project\jars
-
-
-# step2: Install the apache-sedona python support
-# install sedona with spark extension
-pip install apache-sedona[spark]
-# show the installed package version
-pip show apache-sedona
-
-					</script></code></pre>
 
             </section>
+
         </section>
 
     </div>
