@@ -178,7 +178,7 @@ There are stages of metadata management:
  - Creating metadata: Gathering the metadata of essential data entities(e.g. file, table, data pipeline, etc.)
  - Storing metadata: Centralizing and standardizing metadata in a repository.
  - Using metadata: Providing tools to search/discover, understand and trace data by using metadata.
- - Auditing metadata: Check if the collected metadata fulfils the requirements or not?
+ - Auditing metadata: Check if the collected metadata is correct and fulfils the requirements.
 
 
 ## 3. What are the popular metadata management tools?

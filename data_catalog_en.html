@@ -243,7 +243,8 @@
 
             <section>
                 <h3>Administrative & Technical Metadata: How can the data asset be used?</h3>
-                <p>The <em>Temporal Metadata</em> defines usage constraints, format, and access methods. It guides safe, legal, and efficient data usage.</p>
+                <p>The <em>Temporal Metadata</em> defines usage constraints, format, and access methods. It guides safe,
+                    legal, and efficient data usage.</p>
                 <ul>
                     <li>Format: CSV</li>
                     <li>Encoding: UTF-8</li>
@@ -255,123 +256,68 @@
             </section>
             <!-- Slide 4-3: What is metadata management? -->
             <section>
-                <h2>What is metadata management?</h2>
+                <h3>What is metadata management?</h3>
 
                 <ul>
-                    <li class="fragment"><em>Collecting metadata</em>: gathering information(e.g. schemas, formats,
-                        provider, etc.) about data.
+                    <li class="fragment"><em>Designing metadata model</em>: Gathering requirements, and identifying
+                        which metadata need to be collected
                     </li>
-                    <li class="fragment"><em>Lineage tracking</em>: understanding where data came from and how it
-                        changed.
+                    <li class="fragment"><em>Creating metadata</em>: Gathering the metadata of essential data entities.
                     </li>
-                    <li class="fragment"><em>Term definitions</em>: Standardizing terms, so `sedona` means the same
-                        everywhere for everyone.
+                    <li class="fragment"><em>Storing metadata</em>: Centralizing and standardizing metadata in a
+                        repository.
                     </li>
-                    <li class="fragment"><em>Cataloging</em>: Building searchable inventories of data assets.</li>
+                    <li class="fragment"><em>Using metadata</em>: Providing tools to search/discover, understand and
+                        trace data by using metadata.
+                    </li>
+                    <li class="fragment"><em>Auditing metadata</em>: Check if the collected metadata is correct and
+                        fulfils the requirements.
+                    </li>
                 </ul>
             </section>
 
         </section>
 
 
-        <!--Slide 5: Sedona introduction-->
+        <!--Slide 5: Metadata management tools-->
         <section>
             <section>
-                <h2>Why use Apache Sedona?</h2>
-                <p><em>Apache Sedona</em> extends existing cluster computing systems, such as <span
-                        style="font-weight: bold;">Apache Spark, Apache Flink, and Snowflake</span> for processing
-                    large-scale spatial data.
+                <h3>Popular metadata management tools</h3>
+                <p>There are many <em>Metadata Management</em> tools, CASD has tested most of the opensource solutions.
+                </p>
 
-                    It provides <span style="font-weight: bold;">distributed Spatial Datasets and Spatial SQL query engine</span>
-                    that efficiently load, process, and analyze large-scale spatial data across machines.</p>
-
-                <p>CASD provides <em>Apache Spark cluster for Sedona</em>.</p>
-            </section>
-            <!--Slide 5-2: Sedona advantages-->
-            <section data-align="left">
-                <h3>Sedona Key Advantages:</h3>
-
-                <ul>
-                    <li class="fragment"><em>Speed</em>: 10-100 times faster than GeoPandas</li>
-                    <li class="fragment"><em>Versatility</em>: Read, write and processing vector, raster all in one.
-                    </li>
-                    <li class="fragment"><em>Scalability</em>: Can process terabytes of spatial data distributed across
-                        a cluster.
-                    </li>
-                    <li class="fragment"><em>Interoperability</em>: Python, Java, Scala, R and SQL</li>
-                    <li class="fragment"><em>Rich Spatial Functions</em>: OGC-compliant functions such as ST_Contains,
-                        ST_Distance, ST_Intersects, etc.
-                    </li>
-                    <li class="fragment"><em>Spatial indexing</em>: Built-in R-tree and Quad-tree indexing to speed up
-                        spatial queries
-                    </li>
-                </ul>
-
-            </section>
-            <!--Slide 5-2: Sedona disadvantages-->
-            <section id="sedona-disadvantages">
-                <h3>Some disadvantages of Sedona</h3>
-                <ul>
-                    <li class="fragment"><em>Memory-Intensive</em>: Spatial joins and indexing can cause high memory
-                        usage on large datasets.
-                    </li>
-                    <li class="fragment"><em>Deep Learning Curve</em>: Requires knowledge with both Spark and geospatial
-                        concepts.
-                    </li>
-                    <li class="fragment"><em>Limited Raster Support</em>: Raster support is basic compared to
-                        specialized GIS tools.
-                    </li>
-                    <li class="fragment"><em>Limit cartography Support</em>: Lacks advanced cartography and
-                        visualization features
-                    </li>
-
-                </ul>
+                <img src="assets/metadata_management_tools_classification.jpg"
+                     alt="Metadata_management_tools_classification.jpg" style="width:70%; height:auto;"/>
             </section>
 
         </section>
 
-        <!--Slide 6: Key concepts in sedona-->
+        <!--Slide 6: Openmetadata-->
         <section data-transition="fade-in slide-out">
-            <!--Slide 6-1: sedona general architecture-->
+            <!--Slide 6-1: Openmetdata introduction-->
             <section>
-                <h3>Key Concepts in sedona</h3>
-                <img src="assets/apache-sedona_ecosys.webp" alt="apache-sedona_ecosys.webp"/>
-            </section>
-            <!--Slide 6-2: key concept in sedona-->
-            <section>
-                <h3>Kep concepts in sedona(spark):</h3>
-
+                <h3>What is open metadata?</h3>
+                <p><em>Open Metadata</em> is an open-source, modern metadata management tool. It provides:</p>
                 <ul>
-                    <li class="fragment"><em>Spatial RDDs </em>: Core data model in sedona(spark) for storing spatial
-                        data
-                    </li>
-                    <li class="fragment"><em>Spatial DataFrame</em>: An abstraction of Spatial RDDs to simplify usage
-                    </li>
-                    <li class="fragment"><em>Spatial Functions</em>: Predefined spatial functions
-                    </li>
-                    <li class="fragment"><em>Spatial Partitioning</em>: Distributes data across nodes using spatial
-                        boundaries to optimize joins.
-                    </li>
-                    <li class="fragment"><em>Spatial Indexing</em>: Indexes geometries (R-tree, Quad-tree) columns to
-                        accelerate queries calculation.
-                    </li>
+                    <li>Unified metadata storage</li>
+                   <li>Centralized data catalog with powerful search engine</li>
+                    <li>Collaboration features(e.g. comments, annotations, etc.) for better auditing</li>
                 </ul>
             </section>
             <!--Slide 6-3: spatial rdd in sedona-->
             <section>
-                <h3>Spatial RDDs in Sedona(Spark):</h3>
-                <p>Sedona adds <em>spatial metadata, spatial indexing</em> on top of Spark’s standard RDD to build a
-                    Spatial RDD.</p>
+                <h3>Types of Metadata Managed by Open metadata</h3>
+
                 <ul>
-                    <li class="fragment"><em>PointRDD </em>: Core data model to represent points
+                    <li class="fragment"><em>Descriptive Metadata</em>: What is the data asset about?
                     </li>
-                    <li class="fragment"><em>LineStringRDD</em>: Core data model to represent lines
+                    <li class="fragment"><em>Context Metadata:</em>: Why does the data asset exist?
                     </li>
-                    <li class="fragment"><em>PolygonRDD</em>: Core data model to represent polygons
+                    <li class="fragment"><em>Lineage Metadata</em>: Where is the data asset from?
                     </li>
-                    <li class="fragment"><em>RectangleRDD</em>: Core data model to represent bounding boxes
+                    <li class="fragment"><em>Ownership Metadata</em>: Who is responsible for the data asset?
                     </li>
-                    <li class="fragment"><em>RasterRDD</em>: Core data model to represent raster object
+                    <li class="fragment"><em>Temporal Metadata</em>: When was the data asset created and updated?
                     </li>
                 </ul>
             </section>
