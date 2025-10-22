@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <title>Gestion des métadonnées au CASD</title>
+
+    <link rel="stylesheet" href="dist/reset.css"/>
+    <link rel="stylesheet" href="dist/reveal.css"/>
+    <link rel="stylesheet" href="dist/theme/dracula.css"/>
+    <style>
+        .left-align {
+            text-align: left;
+        }
+    </style>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css"/>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!--Slide 1: Overview-->
+        <section>
+            <section>
+
+                <img src="assets/CASD.png" alt="casd logo" style="
+                  height: 250px;
+                  margin: 0 auto 4rem auto;
+                  background: transparent;
+                  -webkit-filter: invert(1);
+                  filter: invert(1);
+                " class="demo-logo"/>
+
+                <h3>Gestion des métadonnées au CASD</h3>
+                <p>
+                    <small>Equipe Datascience</small>
+                </p>
+            </section>
+
+            <section data-transition="fade-in slide-out">
+                <h3>Goals</h3>
+                <ul>
+                    <li>Qu'est-ce que la gouvernance des données ?</li>
+                    <li>Qu'est-ce que la gestion des métadonnées ?</li>
+                    <li>Quels sont les outils populaires de gestion des métadonnées ?</li>
+                    <li>La gestion des métadonnées au CASD</li>
+                </ul>
+            </section>
+        </section>
+
+        <!--Slide 2: What is data governance?-->
+        <section data-transition="fade-in slide-out">
+            <section>
+                <h3>Qu'est-ce que la gouvernance des données ?</h3>
+
+                <p>
+                    <em>La gouvernance des données</em> est un ensemble de <span style="font-weight: bold;"> processus, rôles, politiques,
+                    normes et métriques</span> qui garantissent la
+                    <span style="font-weight: bold;">disponibilité, l'usabilité, l'inter-opérabilité, la sécurité (i.e. confidentialité, intégrité, protection des données personnelles). </span>.
+                </p>
+
+                <p>
+                    Cela rend l'utilisation des données <span style="font-weight: bold;">cohérente, fiable, efficace et efficiente</span>.
+                </p>
+
+
+            </section>
+            <section>
+                <h3>Les concepts clefs de la gouvernance des données</h3>
+                <img src="assets/introduction_of_data_governance_terms.jpg"
+                     alt="introduction_of_data_governance_terms.jpg" style="width:50%; height:auto;"/>
+
+                <ul>
+                    <small>
+                        <li class="fragment"><em>Personnes</em> : qui a le droit de <span style="font-weight: bold;"> prendre des décisions et en est responsable</span>
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Politiques</em> : quelles <span
+                                style="font-weight: bold;">décisions/règles</span> doivent être mise en place pour assurer une gestion et une utilisation efficaces des données.
+                        </li>
+                    </small>
+                    <small>
+                        <li class="fragment"><em>Métriques</em> : comment <span
+                                style="font-weight: bold;">mesurer/évaluer</span> si  les <span style="font-weight: bold;">décisions/règles</span>
+                            sont bien respectées.
+                        </li>
+                    </small>
+                </ul>
+
+                <aside class="notes">
+                    Par exemple, si un utilisateur demande à accéder aux données, qui peut décider ou non de lui accorder l'accès ?
+                    Par exemple, avant de publier des données, les données doivent passer les étapes de `contrôle qualité` et `contrôle
+                     de confidentialité`, etc.
+                    par exemple, pour contrôler la `qualité des données`, il faut définir les `indicateurs de précision`, 
+                    `d'exhaustivité`, etc.
+                </aside>
+            </section>
+
+        </section>
+
+        <!--Slide 3: data management-->
+        <section data-transition="fade-in slide-out">
+            <!--Slide 3-1: data governance vs data management -->
+            <section id="data governance vs data management">
+                <h3>Gouvernance des données vs gestion des données</h3>
+                <p class="left-align">
+                    <em>La gestion des données</em> est un sous-ensemble à part entière de <span style="font-weight: bold;">pratiques, processus,
+                         systèmes et outils </span>
+                    qui mettent en pratique la définition de <em>la gouvernance des données</em>.
+                </p>
+
+                <ul>
+
+                    <li class="fragment"><em>Gouvernance des donnnées </em> : définit les politiques et responsabilités (i.e. ce qui doit être
+                        fait et dans quel but.)
+                    </li>
+
+                    <li class="fragment"><em>Gestion des données</em> : met en oeuvre les politiques (i.e. comment elles sont mises en pratique.)
+                    </li>
+
+                </ul>
+
+            </section>
+            <!--Slide 3-2: key concept in data management-->
+            <section>
+                <h3>Les concepts cles de la gestion des données :</h3>
+
+                <ul>
+
+                    <li class="fragment"><em>Principes de gestion</em> : définissent la propriété, la responsabilité, l'éthique,
+                        la conformité, etc.
+                    </li>
+
+                    <li class="fragment"><em>Cycle de vie</em> : décrit les étapes depuis la création jusqu'à la suppression des
+                         données dans une organisation.
+                    </li>
+
+                    <li class="fragment"><em>Qualité</em> : mesure l'adéquation des données à l'usage prévu
+                    </li>
+
+                </ul>
+            </section>
+            <!--Slide 3-3: key concept in data management-->
+            <section>
+                <h3>Les concepts cles de la gestion des données :</h3>
+
+                <ul>
+                    <li class="fragment"><em>Gestion des métadonnées</em> : facilité la recherche et l'utilisation des données en 
+                        en leur attribuant un contexte
+                    </li>
+
+                    <li class="fragment"><em>Sécurité</em> : protège les données contre les accès indésirables, l'altération ou 
+                        la perte.
+                    </li>
+
+                </ul>
+            </section>
+        </section>
+
+
+        <!--Slide 4: What is metadata management-->
+        <section data-transition="fade-in slide-out">
+            <!-- Slide 4-1: What is metadata? -->
+            <section>
+                <h3>Qu'est-ce qu'une métadonnée ?</h3>
+                <p><em>ISO/IEC 11179</em> : les métadonnées sont des données précisant le sens et 
+                    les détails technique d'autres données : contenu, domaine de valeurs ou autres éléments sémantiques et 
+                    de représentation.</p>
+
+                <p><em>Ma déifinition </em> : les métadonnées sont des informations structurées qui décrivent un ou plusieurs 
+                    aspects (le format, la taille, la finalité, etc.) d'une entité de données.
+                    en général, les métadonnées sont utlisées pourr résumer des informations de base à propos des données qui 
+                    peuvent faciliter <span
+                            style="font-weight: bold;">la recheche, le suivi, l'utilisation et la gestion de données.</span></p>
+
+            </section>
+            <!-- Slide 4-2: What is metadata? -->
+            <section>
+                <h3>Métadonnées descriptives : de quoi traitent les données ?</h3>
+                <p>Les <em>métadonnées descriptives</em> détaillent le contenu et le sens des données. Elles aident l'utilisateur 
+                    à découvrir et à comprendre les données.</p>
+                <ul>
+                    <li>Schéma, valeurs distinctes, valeurs nulles, etc.</li>
+                    <li>Description de contenu (tables, colonnes)</li>
+                    <li>Mots-clefs ou tags.</li>
+                    <li>Thèmes ou catégories</li>
+                </ul>
+
+
+            </section>
+            <section>
+                <h3>Métadonnées de contexte : pourquoi les données existent-elles ?</h3>
+                <p>Les <em>métadonnées de contexte</em> définissent le contexte, le but et le besoin. Elles sont le lien 
+                    entre les objectifs organisationnels et les contraintes de conformité.</p>
+                <ul>
+                    <li>Règles de conformité</li>
+                    <li>Analys d'impact</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>Métadonnées de traçage : d'où viennent les données ?</h3>
+                <p>Les <em>métadonnées de traçage</em> établissent l'origine et les transformations des données. Elles
+                    permettent la traçabilité, l'analyse d'impact et le debogage.</p>
+                <ul>
+                    <li>Source des données</li>
+                    <li>Transformations</li>
+                    <li>Destination</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>Métadonnées de propriété : qui est responsable des données ?</h3>
+                <p>Les <em>métadonnées de propriété </em> attribuent les responsabilités. Elles précisent les responsables 
+                    de la qualité, de la conformité, de la résolution des problèmes.</p>
+                <ul>
+                    <li>Fournissseur des données</li>
+                    <li>Propriétaire des données</li>
+                    <li>Utilisateur des données</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>Métadonnées temporelles : Quand les données ont-elles été créées et mises à jour ?</h3>
+                <p>Les <em>métadonnées temporelles</em> enregistrent la date et l'historique des versions. Elles facilitent l'audit,
+                    la conformité, et la prise de décision lié à la chronologie des données.</p>
+                <ul>
+                    <li>Date de création</li>
+                    <li>Date de dernière mise à jour</li>
+                    <li>Version</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h3>Métadonnées administratives et techniques : Comment les données peuvent-elles être utilisées ?</h3>
+                <p>Elles définissent les contraintes d'utilisation, format, méthodes d'accès pour un usage sûr,
+                     légal et efficace.</p>
+                <ul>
+                    <li>Format : CSV</li>
+                    <li>Encodage : UTF-8</li>
+                    <li>Méthode d'accès : endpoint d'une API REST</li>
+                    <li>Politique de confidentialité : Contient des données personnnelles, le RGPD s'applique</li>
+                    <li>Politique de conservaation : conserver 7 ans</li>
+                </ul>
+
+            </section>
+            
+            <!-- Slide 4-3: What is metadata management? -->
+            <section>
+                <h3>Qu'est ce que la gestion des métadonnées ?</h3>
+
+                <ul>
+                    <li class="fragment"><em>Conception du modèle de métadonnées</em> : Gathering requirements, et identifier quelles
+                        métadonnées doivent être collectées.
+                    </li>
+                    <li class="fragment"><em>Création des métadonnées</em> : collecter les métadonnées des principales entités de données.
+                    </li>
+                    <li class="fragment"><em>Conservation des métadonnées</em> : Centraliser et standardiser les métadonnées dans un entrepôt.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Slide 4-4: What is metadata management? -->
+            <section>
+                <h3>Qu'est ce que la gestion des métadonnées ?</h3>
+
+                <ul>
+                    <li class="fragment"><em>Utilisation des métadonnées</em> : Fournir un outils pour rechercher/découvrir, comprendre et
+                        tracer les données.
+                    </li>
+                    <li class="fragment"><em>Audit des metadonnnées</em> : Vérifier si les métadonnées collectées sont correctes et
+                        répondent aux exigences.
+                    </li>
+                </ul>
+            </section>
+
+        </section>
+
+
+        <!--Slide 5: Metadata management tools-->
+        <section>
+            <section>
+                <h3>Quelques outils populaires</h3>
+                <p>De nombreux outils <em>de gestion des métadonnées</em> existent. Le CASD a testé les solutions open source.
+                </p>
+                <img src="assets/metadata_management_tools_classification.jpg"
+                     alt="Metadata_management_tools_classification.jpg" style="width:70%; height:auto;"/>
+            </section>
+
+        </section>
+
+        <!--Slide 6: Openmetadata-->
+        <section data-transition="fade-in slide-out">
+            <!--Slide 6-1: Openmetdata introduction-->
+            <section>
+                <h3>Qu'est-ce que Open Metadata ?</h3>
+                <p><em>Open Metadata</em> est un outil de gestion des métadonnées open source et modèrne. il fournit :</p>
+                <ul>
+                    <li>Un sotckage unifié des métadonnées</li>
+                    <li>Un catalogue de données centralisé doté d'un puissant moteur de recherche </li>
+                    <li>Des fonctionnalités de collaboration (par exemple la création/attribution de tâches, des conversations d'équipe,
+                         etc.) pour faciliter l'audit.</li>
+                </ul>
+            </section>
+            <!--Slide 6-2: Openmetdata Architecture-->
+            <section>
+                <h3>Architecture d'Open metadata</h3>
+                <p><em>La plateforme Open Metadata</em> contient : une appli web, un SGBDR, un moteur de recherche et un
+                gestionnaire de workflows.</p>
+                <img src="assets/om_architecture.png"
+                     alt="om_architecture.png" style="width:70%; height:auto;"/>
+            </section>
+            
+            <!--Slide 6-3: Types of Metadata Managed by Open metadata-->
+            <section>
+                <h3>Types de métadonnées gérées par Open metadata</h3>
+
+                <ul>
+                    <li class="fragment"><em>Métadonnées descriptives</em> : De quoi traitent les données ?
+                    </li>
+                    <li class="fragment"><em>Métadonnées de contexte</em> : Pourquoi les données existent-elles ?
+                    </li>
+                    <li class="fragment"><em>Métadonnées de traçage</em> : Origine des données ?
+                    </li>
+                    <li class="fragment"><em>Métadonnées de propriété</em> : Qui est responsable ?
+                    </li>
+                    <li class="fragment"><em>Métadonnées temporelles</em> : Quand les données ont-elles été créées et mises à jour ?
+                    </li>
+                    <li class="fragment"><em>Métadonnées administratives et techniques</em> : Comment les données peuvent-elles être utilisées ?
+                    </li>
+                </ul>
+            </section>
+
+            <!--Slide 6-3: Open metadata key features-->
+            <section>
+                <h3>Les fonctionnalités clefs d'Open metadata</h3>
+                <ul>
+                    <li class="fragment"><em>Framework d'ingestion des métadonnées</em> : connecteurs, API rest, SDK Python
+                    </li>
+                    <li class="fragment"><em>Découverte des données</em> : Données consultables par nom (i.e. table, colonne),
+                        description, tags, propriétaire, etc.
+                    </li>
+                    <li class="fragment"><em>Suivi de la traçabilité</em> : Visualisation des flux de données de bout en bout.
+                    </li>
+                    <li class="fragment"><em>Collaboration</em> : Annonces, tâches, file d'activité, conversations d'équipes, etc.</li>
+                    <li class="fragment"><em>Gouvernance</em> : Equipes, rôles, politiques, etc.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Les avantages dOpen metadata</h3>
+                <ul>
+                    <li>Open-source et extensible.</li>
+                    <li>Gère tous les types de métadonnées.</li>
+                    <li>Renforce la collaboration entres équipes.</li>
+                    <li>Communauté dynamique.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Les inconvénients d'Open metadata</h3>
+                <ul>
+                    <li>Complexité du déploiement et de la configuration.</li>
+                    <li>Le framework d'ingestion nécessite beaucoup de temps de développement.</li>
+                    <li>Certains besoins spécifiques peuvent nécessiter une personnalisation.</li>
+                </ul>
+            </section>
+        </section>
+
+        <!--Slide 7: Open metadata in CASD-->
+        <section data-transition="fade-in slide-out">
+            <!-- Slide 7-1: overview      -->
+            <section>
+                <h2>Open metadata en pratique</h2>
+                <ul>
+                    <li>Ingestion des métadonnées.</li>
+                    <li>Utilisation des métadonnées pour découvrir les données.</li>
+                    <li>Utilisation des fonctionnalités collaboratives pour améliorer les métadonnées (audit).</li>
+                </ul>
+
+            </section>
+
+        </section>
+
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+</script>
+</body>
+
+</html>
